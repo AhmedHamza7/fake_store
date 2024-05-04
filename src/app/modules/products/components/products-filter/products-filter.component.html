@@ -1,1 +1,16 @@
-<p>products-filter works!</p>
+<section class="categories d-flex align-items-center justify-content-between">
+    <div class="categories-text">
+        <h3 class="title">
+            Shop by Category
+        </h3>
+        <span class="text">
+            Discover the perfect products for your needs.
+        </span>
+    </div>
+    <div class="categories-wrapper d-flex align-items-center">
+        <div class="category" *ngFor="let category of categoriesData">
+            <label for="category">{{category}}</label>
+            <input class="d-none" type="radio" name="category">
+        </div>
+    </div>
+</section>

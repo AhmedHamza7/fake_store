@@ -1,2 +1,5 @@
-<app-products-filter></app-products-filter>
-<app-products-list></app-products-list>
+<app-products-filter *ngIf="!pageLoading" [categoriesData]="categoriesData"></app-products-filter>
+<app-products-list *ngIf="!productsLoading" [productsData]="productsData"></app-products-list>
+<div class="spinner-border" role="status" *ngIf="pageLoading">
+    <span class="visually-hidden">Loading...</span>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-products-filter',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-filter.component.scss']
 })
 export class ProductsFilterComponent implements OnInit {
-
+  @Input() categoriesData:any
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.categoriesData);
+    
   }
 
 }
