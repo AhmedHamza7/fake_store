@@ -1,0 +1,29 @@
+.categories {
+    .categories-text {
+        .text {
+            color: var(--grey)
+        }
+    }
+    .categories-wrapper {
+        .category {
+            label {
+                border: 1px solid var(--grey);
+                background-color: var(--white);
+                color: var(--primary);
+                border-radius: 10px;
+                padding: 7px 15px;
+                margin-inline-start: 0.9rem;
+                cursor: pointer;
+                transition: 0.3s all ease;
+                &:hover {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+            }
+            label.active {
+                background-color: var(--primary);
+                color: var(--white);
+            }
+        }
+    }
+}
