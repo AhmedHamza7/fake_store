@@ -1,5 +1,5 @@
 import { Product } from './../../models/product-model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
 
@@ -8,7 +8,7 @@ import { ProductsService } from '../../services/products.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit , OnDestroy{
   subscribtions = new Subscription();
   pageLoading: boolean = false
   productsLoading: boolean = false
@@ -48,5 +48,9 @@ export class ProductsComponent implements OnInit {
         }
       )
     ) 
+  }
+
+  ngOnDestroy(): void {
+    this.subscribtions.unsubscribe()
   }
 }
