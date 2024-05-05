@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import { ProductsFilterComponent } from './components/products-filter/products-f
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     ProductsRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    CoreModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

@@ -1,0 +1,15 @@
+.product-wrapper {
+    cursor: pointer;
+    .product-img {
+        img {
+            min-height: 200px;
+            max-height: 200px;
+        }
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+    .desc {
+        color: var(--grey);
+    }
+}

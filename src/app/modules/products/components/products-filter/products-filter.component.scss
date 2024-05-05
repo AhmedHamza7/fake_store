@@ -26,4 +26,19 @@
             }
         }
     }
+
+    @media (max-width:768px) {
+        flex-wrap: wrap;
+        .categories-wrapper {
+            margin-top: 1rem;
+            overflow: scroll;
+            .category {
+                label {
+                    padding: 5px 12px;
+                    margin-inline-start: 0.5rem;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
 }
