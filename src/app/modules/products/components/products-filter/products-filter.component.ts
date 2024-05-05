@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-products-filter',
@@ -6,12 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./products-filter.component.scss']
 })
 export class ProductsFilterComponent implements OnInit {
-  @Input() categoriesData:any
+  @Input() categoriesData: string[] = [];
+  @Output() selectedCategory = new EventEmitter<any>()
+  currentCategory:string = ''
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.categoriesData);
-    
+    this.currentCategory = this.categoriesData[0]
+  }
+
+  onSelectCategory(category:any):void {
+    this.currentCategory = category;
+    this.selectedCategory.emit(category)
   }
 
 }

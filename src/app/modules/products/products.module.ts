@@ -6,6 +6,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductsFilterComponent } from './components/products-filter/products-filter.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ]
 })
 export class ProductsModule { }

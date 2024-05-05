@@ -9,8 +9,8 @@
     </div>
     <div class="categories-wrapper d-flex align-items-center">
         <div class="category" *ngFor="let category of categoriesData">
-            <label for="category">{{category}}</label>
-            <input class="d-none" type="radio" name="category">
+            <label [for]="category" [ngClass]="{'active': currentCategory === category}" (click)="onSelectCategory(category)">{{category}}</label>
+            <input class="d-none" type="radio" name="category" [(ngModel)]="currentCategory" [id]="category" (ngModelChange)="onSelectCategory(category)">
         </div>
     </div>
 </section>

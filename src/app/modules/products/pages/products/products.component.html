@@ -1,5 +1,7 @@
-<app-products-filter *ngIf="!pageLoading" [categoriesData]="categoriesData"></app-products-filter>
+<app-products-filter *ngIf="!pageLoading" [categoriesData]="categoriesData" (selectedCategory)="getProductsByCategory($event)"></app-products-filter>
 <app-products-list *ngIf="!productsLoading" [productsData]="productsData"></app-products-list>
-<div class="spinner-border" role="status" *ngIf="pageLoading">
-    <span class="visually-hidden">Loading...</span>
+<div class="loader vh-100 d-flex align-items-center justify-content-center" *ngIf="pageLoading || productsLoading">
+    <div class="spinner-border mx-auto" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
 </div>
